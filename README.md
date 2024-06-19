@@ -18,6 +18,7 @@ HomeKitManager클래스를 사용하여 HomeKit의 홈과 액세서리를 관리
 HomeKitManager클래스를 사용하여 HomeKit의 홈과 액세서리를 관리할 수 있다.</br>
 LightController클래스를 사용하여 HomeKit의 액세서리를 제어할 수 있다. (조명 제어)</br>
 watchOS를 활용하여 동작으로 조명을 제어하기 위해 CoreMotion을 사용하였다.</br>
+CoreMotion의 motionManager의 가속도계를 사용하여 휘두르기를 측정하였다. </br>
 
 ## 👩‍👩‍👧‍👧 Pair
 
