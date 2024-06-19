@@ -35,8 +35,6 @@ watchOS를 활용하여 동작으로 조명을 제어하기 위해 CoreMotion을
     <tr>
       <td align="center"><a href=""><img src="https://github.com/DeveloperAcademy-POSTECH/2024-MC2-M17-Kodari/assets/108053426/e3f6c592-6443-43d4-9e57-b55aa48ed070" width="200px;" alt=""/><br /><sub><b></b></sub></a></td>
       <td align="center"><a href=""><img src="https://github.com/DeveloperAcademy-POSTECH/2024_NC2_HomeKit/assets/134616474/f058fbbd-0fc4-479c-8ede-f6c7d94dcedd" width="200px;" alt=""/><br /><sub><b></b></sub></a></td>
-
-
     </tr>
     <tr>
       <td colspan="1" align="center"><b>📱</b></td>
