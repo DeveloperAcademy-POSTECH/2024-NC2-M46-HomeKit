@@ -51,53 +51,6 @@ struct ContentView: View {
                     }
                 }
                 
-                // 사용자가 액세서리를 선택한 경우 제어 버튼을 표시
-//                if let selectedAccessory = homeKitManager.selectedAccessory {
-//                    VStack(spacing: 20) {
-//                        Button("Turn On Light") {
-//                            lightController.toggleLight(on: true, for: selectedAccessory)
-//                        }
-//                        .padding()
-//                        .background(Color.blue)
-//                        .foregroundColor(.white)
-//                        .cornerRadius(10)
-//                        
-//                        Button("Turn Off Light") {
-//                            lightController.toggleLight(on: false, for: selectedAccessory)
-//                        }
-//                        .padding()
-//                        .background(Color.red)
-//                        .foregroundColor(.white)
-//                        .cornerRadius(10)
-//                        
-//                        HStack {
-//                            Button("Dim Light by 5%") {
-//                                lightController.changeBrightness(by: -5, for: selectedAccessory) { newBrightness in
-//                                    homeKitManager.brightness = newBrightness
-//                                }
-//                            }
-//                            .padding()
-//                            .background(Color.gray)
-//                            .foregroundColor(.white)
-//                            .cornerRadius(10)
-//                            
-//                            Button("Brighten Light by 5%") {
-//                                lightController.changeBrightness(by: 5, for: selectedAccessory) { newBrightness in
-//                                    homeKitManager.brightness = newBrightness
-//                                }
-//                            }
-//                            .padding()
-//                            .background(Color.yellow)
-//                            .foregroundColor(.black)
-//                            .cornerRadius(10)
-//                        }
-//                        
-//                        Text("Current Brightness: \(homeKitManager.brightness)%")
-//                            .padding()
-//                    }
-//                    .padding()
-//                }
-                
                 // 아이폰 휘두름 상태를 표시하는 인디케이터
                 Text(motionManager.isShaken ? "Shaken!" : "Not Shaken")
                     .font(.headline)

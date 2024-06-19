@@ -51,48 +51,4 @@ class LightController: NSObject {
             }
         }
     }
-    
-    // 조명의 색상을 변경하는 함수
-//    func changeLightColor(to color: UIColor, for accessory: HMAccessory) {
-//        for service in accessory.services {
-//            if service.serviceType == HMServiceTypeLightbulb {
-//                for characteristic in service.characteristics {
-//                    if characteristic.characteristicType == HMCharacteristicTypeHue {
-//                        let hue = color.hueComponent * 360
-//                        characteristic.writeValue(hue) { error in
-//                            if let error = error {
-//                                print("Error setting hue: \(error)")
-//                            } else {
-//                                print("Successfully set hue to \(hue)")
-//                            }
-//                        }
-//                    } else if characteristic.characteristicType == HMCharacteristicTypeSaturation {
-//                        let saturation = color.saturationComponent * 100
-//                        characteristic.writeValue(saturation) { error in
-//                            if let error = error {
-//                                print("Error setting saturation: \(error)")
-//                            } else {
-//                                print("Successfully set saturation to \(saturation)")
-//                            }
-//                        }
-//                    }
-//                }
-//            }
-//        }
-//    }
 }
-
-// UIColor 확장을 통해 색상 구성 요소를 추출하는 기능을 제공
-//extension UIColor {
-//    var hueComponent: CGFloat {
-//        var hue: CGFloat = 0
-//        getHue(&hue, saturation: nil, brightness: nil, alpha: nil)
-//        return hue
-//    }
-//    
-//    var saturationComponent: CGFloat {
-//        var saturation: CGFloat = 0
-//        getHue(nil, saturation: &saturation, brightness: nil, alpha: nil)
-//        return saturation
-//    }
-//}
