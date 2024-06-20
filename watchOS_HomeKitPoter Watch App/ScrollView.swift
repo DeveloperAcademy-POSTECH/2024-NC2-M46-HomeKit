@@ -61,7 +61,10 @@ struct ScrollView: View {
                                 .padding()
                                 .cornerRadius(10)
                     }
-                    .background(homeKitManager.selectedHome != nil && homeKitManager.selectedRoom != nil && homeKitManager.selectedAccessory != nil ? Color.blue : Color("PoterGray"))
+                    .background(
+                                RoundedRectangle(cornerRadius: 25)
+                                    .fill(homeKitManager.selectedHome != nil && homeKitManager.selectedRoom != nil && homeKitManager.selectedAccessory != nil ? Color.blue : Color("PoterGray"))
+                            )
                     .padding()
                     .disabled(!(homeKitManager.selectedHome != nil && homeKitManager.selectedRoom != nil && homeKitManager.selectedAccessory != nil)) // 조건에 따라 버튼 활성화
                 }
