@@ -8,6 +8,9 @@ struct SettingView: View {
     @State private var isShakeToToggleEnabled = false
     @State private var navigateToScrollView = false
     
+    private let lightController = LightController()
+    @StateObject private var motionManager = MotionManager()
+    
     var body: some View {
         NavigationStack {
             VStack(alignment: .leading, spacing: 5) {
@@ -30,8 +33,7 @@ struct SettingView: View {
                     NavigationLink(destination: ScrollView(homeKitManager: homeKitManager,
                                                           selectedHome: $selectedHome,
                                                           selectedRoom: $selectedRoom,
-                                                          selectedAccessory: $selectedAccessory,
-                                                          isShakeToToggleEnabled: $isShakeToToggleEnabled))
+                                                           selectedAccessory: $selectedAccessory, isShakeToToggleEnabled: $isShakeToToggleEnabled))
                     {
                         if (!isShakeToToggleEnabled) {
                             CustomRoundedRectangle(tl: 22, tr: 5, bl: 22, br: 5) // 모든 모서리에 같은 radius 설정
@@ -47,7 +49,7 @@ struct SettingView: View {
                         else {
                             CustomRoundedRectangle(tl: 22, tr: 5, bl: 22, br: 5) // 모든 모서리에 같은 radius 설정
                                 .frame(width: 80, height: 44)
-                                .foregroundColor(Color("PoterGray"))
+                                .foregroundColor(Color("PoterWhite30"))
                                 .overlay(
                                     Text("Set")
                                         .foregroundColor(.white)
@@ -57,30 +59,6 @@ struct SettingView: View {
                         }
                         
                     }
-//                    Button(action: {
-//                        self.navigateToScrollView = true
-//                        NavigationLink(destination: ScrollView(homeKitManager: homeKitManager,
-//                                                               selectedHome: $selectedHome,
-//                                                               selectedRoom: $selectedRoom,
-//                                                               selectedAccessory: $selectedAccessory,
-//                                                               isShakeToToggleEnabled: $isShakeToToggleEnabled),
-//                                       isActive: $navigateToScrollView) {
-//                            EmptyView()
-//                        }
-//
-//                    }) {
-//                        CustomRoundedRectangle(tl: 22, tr: 5, bl: 22, br: 5) // 모든 모서리에 같은 radius 설정
-//                            .frame(width: 80, height: 44)
-//                            .foregroundColor(Color("PoterRed"))
-//                            .overlay(
-//                                Text("Set")
-//                                    .foregroundColor(.white)
-//                                    .bold()
-//                                    .font(.callout)
-//                            )
-//                    }
-//                    .buttonStyle(PlainButtonStyle()) // 네비게이션링크 버튼 커스텀을 위함
-//                    
                     if (!isShakeToToggleEnabled) {
                         CustomRoundedRectangle(tl: 5, tr: 22, bl: 5, br: 22) // 모든 모서리에 같은 radius 설정
                             .frame(width: 80, height: 44)
@@ -105,9 +83,24 @@ struct SettingView: View {
                     }
                     
                 }.padding(.top, 20)
-                
             }
             .navigationBarTitle("Poter")
+            .onChange(of: motionManager.isShaken) { _, newValue in
+                handleShake(newValue)
+            }
+        }
+    }
+    
+    // 흔들림 제어 함수
+    private func handleShake(_ isShaken: Bool) {
+        if isShakeToToggleEnabled && isShaken {
+            if let selectedAccessory = homeKitManager.selectedAccessory {
+                lightController.toggleLight(on: homeKitManager.brightness == 0, for: selectedAccessory)
+                homeKitManager.brightness = homeKitManager.brightness == 0 ? 100 : 0
+            }
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            motionManager.isShaken = false
         }
     }
 }

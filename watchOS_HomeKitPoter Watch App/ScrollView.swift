@@ -15,6 +15,7 @@ struct ScrollView: View {
 
     var body: some View {
         NavigationStack {
+            ScrollViewReader { proxy in
                 VStack {
                     // 사용자가 홈, 방, 액세서리를 선택할 수 있는 리스트
                     List {
@@ -56,17 +57,13 @@ struct ScrollView: View {
                         presentationMode.wrappedValue.dismiss() // 현재 뷰를 닫음
                     }) {
                         Text("Done")
-                            .foregroundColor(.white)
-                            .padding()
-                            .background(Color.blue)
-                            .cornerRadius(10)
+                            .foregroundColor(.black)
+                                .padding()
+                                .cornerRadius(10)
                     }
+                    .background(homeKitManager.selectedHome != nil && homeKitManager.selectedRoom != nil && homeKitManager.selectedAccessory != nil ? Color.blue : Color("PoterGray"))
                     .padding()
-                    
-                }
-                .navigationBarTitle("Potter")
-                .onChange(of: motionManager.isShaken) { _, newValue in
-                    handleShake(newValue)
+                    .disabled(!(homeKitManager.selectedHome != nil && homeKitManager.selectedRoom != nil && homeKitManager.selectedAccessory != nil)) // 조건에 따라 버튼 활성화
                 }
                 .onChange(of: homeKitManager.selectedHome) {_, newValue in
                     self.selectedHome = newValue
@@ -76,22 +73,18 @@ struct ScrollView: View {
                 }
                 .onChange(of: homeKitManager.selectedAccessory) {_, newValue in
                     self.selectedAccessory = newValue
+//                    withAnimation {
+//                        DispatchQueue.main.async{
+//                            proxy.scrollTo(newValue, anchor: .top)
+//                        }
+//                    }
                 }
+                
         }
-    }
-    
-    // 흔들림 제어 함수
-    private func handleShake(_ isShaken: Bool) {
-        if isShakeToToggleEnabled && isShaken {
-            if let selectedAccessory = homeKitManager.selectedAccessory {
-                lightController.toggleLight(on: homeKitManager.brightness == 0, for: selectedAccessory)
-                homeKitManager.brightness = homeKitManager.brightness == 0 ? 100 : 0
+
             }
         }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            motionManager.isShaken = false
-        }
-    }
+    
 }
 struct ScrollView_Previews: PreviewProvider {
     static var previews: some View {
