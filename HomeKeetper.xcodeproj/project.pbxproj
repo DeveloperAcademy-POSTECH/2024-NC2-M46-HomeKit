@@ -26,6 +26,8 @@
 		71D6FA4C2C2123A000876061 /* HomeKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3068E7132C1B2B7F0090EBD4 /* HomeKitManager.swift */; };
 		71D6FA4D2C2123A900876061 /* LightController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300A6C132C1FA0B300E5E5EC /* LightController.swift */; };
 		71D6FA4E2C2123AF00876061 /* MotionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 300A6C152C1FA83D00E5E5EC /* MotionManager.swift */; };
+		71EA53982C23BB25001D4264 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71EA53972C23BB25001D4264 /* SettingView.swift */; };
+		71EA539A2C23BB4F001D4264 /* ScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71EA53992C23BB4F001D4264 /* ScrollView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +80,8 @@
 		71C313262C2015BC00CE84F5 /* MotionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionManager.swift; sourceTree = "<group>"; };
 		71D6FA492C2117F500876061 /* watchOS_HomeKitPoter Watch App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "watchOS_HomeKitPoter Watch App.entitlements"; sourceTree = "<group>"; };
 		71D6FA4F2C2123F100876061 /* watchOS_HomeKitPoter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = watchOS_HomeKitPoter.entitlements; sourceTree = "<group>"; };
+		71EA53972C23BB25001D4264 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		71EA53992C23BB4F001D4264 /* ScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +179,8 @@
 				71D6FA492C2117F500876061 /* watchOS_HomeKitPoter Watch App.entitlements */,
 				71C313102C20135700CE84F5 /* watchOS_HomeKitPoterApp.swift */,
 				71C313122C20135700CE84F5 /* ContentView.swift */,
+				71EA53972C23BB25001D4264 /* SettingView.swift */,
+				71EA53992C23BB4F001D4264 /* ScrollView.swift */,
 				71C313222C20158800CE84F5 /* HomeKitManager.swift */,
 				71C313242C2015A200CE84F5 /* LightController.swift */,
 				71C313262C2015BC00CE84F5 /* MotionManager.swift */,
@@ -346,8 +352,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				71C313252C2015A200CE84F5 /* LightController.swift in Sources */,
+				71EA539A2C23BB4F001D4264 /* ScrollView.swift in Sources */,
 				71C313272C2015BC00CE84F5 /* MotionManager.swift in Sources */,
 				71C313132C20135700CE84F5 /* ContentView.swift in Sources */,
+				71EA53982C23BB25001D4264 /* SettingView.swift in Sources */,
 				71C313112C20135700CE84F5 /* watchOS_HomeKitPoterApp.swift in Sources */,
 				71C313232C20158800CE84F5 /* HomeKitManager.swift in Sources */,
 			);
