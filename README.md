@@ -12,7 +12,7 @@ HomeKitManager클래스를 사용하여 HomeKit의 홈과 액세서리를 관리
 주문을 외쳐 조명을 제어해보자!
 
 ## 🖼️ Prototype
-(프로토타입과 설명 추가)
+<img width="1098" alt="image" src="https://github.com/DeveloperAcademy-POSTECH/2024-NC2-M46-HomeKit/assets/134616474/c42a03b4-d940-4e88-8536-153b24df471c">
 
 ## 🛠️ About Code
 HomeKitManager클래스를 사용하여 HomeKit의 홈과 액세서리를 관리할 수 있다.</br>
