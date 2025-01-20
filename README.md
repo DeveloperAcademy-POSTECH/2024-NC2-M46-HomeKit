@@ -1,6 +1,6 @@
 # 2024-NC2-M46-HomeKit
 ## 🎥 Youtube Link
-(추후 만들어진 유튜브 링크 추가)
+[![Video Label](http://img.youtube.com/vi/zjLu4ytoTDU/0.jpg)](https://youtu.be/zjLu4ytoTDU)
 
 ## 💡 About HomeKit
 홈킷을 사용하여 스마트홈에서 사용하는 디바이스들을 제어할 수 있고 사용자 중심의 인터페이스를 제공할 수 있다.
